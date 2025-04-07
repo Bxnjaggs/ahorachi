@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>...</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background-color: #fff;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    p {
+      color: #444;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #video-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      z-index: 9999;
+    }
+
+    #video-container iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p>Haz clic para continuar...</p>
+  </div>
+
+  <div id="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/g4G7NloHAj8?autoplay=1&mute=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <script>
+    document.querySelector("p").addEventListener("click", () => {
+      document.querySelector(".content").style.display = "none";
+      document.getElementById("video-container").style.display = "block";
+    });
+  </script>
+</body>
+</html>
